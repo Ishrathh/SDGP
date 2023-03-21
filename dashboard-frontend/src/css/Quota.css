@@ -1,0 +1,11 @@
+.quotaComponent{
+    width: 35%;
+    height: 450px;
+    border-radius: 10px;
+    background-color: #37BEB0;
+    color: #FFF;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

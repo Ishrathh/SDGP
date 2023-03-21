@@ -1,0 +1,36 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+.quotaPane{
+    height: 100%;
+    color: #000;
+}
+
+.screenTimePane{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btnPane{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    margin-top: 5%;
+    width: 100%;
+    justify-content: center;
+}
+
+#startBtn{
+    width: 45%;
+}
+
+#stopBtn{
+    width: 45%;
+}

@@ -1,0 +1,18 @@
+.darkBtn {
+    background-color: #0C6170;
+    border-color: #0C6170;
+    color: #DBF5F0;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.lightBtn {
+    background-color: #DBF5F0;
+    color: #0C6170;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border-color: #DBF5F0;
+}
+

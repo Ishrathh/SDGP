@@ -1,0 +1,18 @@
+.screenTime{
+    background-color: #37BEB0;
+    color: #FFF;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    width: 100%;
+}
+
+.screenTimetitle{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5%;
+}
