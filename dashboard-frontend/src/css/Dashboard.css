@@ -17,20 +17,3 @@
     flex-direction: column;
     gap: 20px;
 }
-
-.btnPane{
-    display: flex;
-    flex-direction: row;
-    gap: 5%;
-    margin-top: 5%;
-    width: 100%;
-    justify-content: center;
-}
-
-#startBtn{
-    width: 45%;
-}
-
-#stopBtn{
-    width: 45%;
-}
