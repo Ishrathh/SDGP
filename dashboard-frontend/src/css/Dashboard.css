@@ -1,8 +1,8 @@
 .content{
     display: flex;
     flex-direction: row;
-    gap: 10%;
-    margin-top: 5%;
+    gap: 5%;
+    margin-top: 3%;
     margin-left: 2.5%;
     margin-right: 2.5%;
 }
@@ -10,6 +10,12 @@
 .quotaPane{
     height: 100%;
     color: #000;
+}
+
+.rightPane{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .screenTimePane{

@@ -1,0 +1,9 @@
+.suggestion{
+    border: 3px solid #0C6170;
+    border-radius: 10px;
+    padding: 20px;
+    height: 80px;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+}

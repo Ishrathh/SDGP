@@ -7,6 +7,10 @@
     font-weight: bold;
 }
 
+.darkBtn:hover {
+    background-color: #117f92;;
+}
+
 .lightBtn {
     background-color: #DBF5F0;
     color: #0C6170;
@@ -14,5 +18,9 @@
     padding: 10px;
     font-weight: bold;
     border-color: #DBF5F0;
+}
+
+.lightBtn:hover {
+    background-color: #a3f8e7;
 }
 
