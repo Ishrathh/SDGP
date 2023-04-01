@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: navy;
+}
+
+.signup-box {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.signup-box h2 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+}
+
+.user-box {
+  position: relative;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  background: transparent;
+}
+
+.user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 12px;
+}
+
+input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #03a9f4;
+  color: white;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #1a73e8;
+}
