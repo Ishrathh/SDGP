@@ -1,1 +1,10 @@
-"# SDGP //1 Ishrath //2 Vinuk //3 Ravindu //4 Nadim //5 Neluka" 
+---> Github repo of team fs0ciety from IIT <---
+Team details:
+    - Ishrath Inaam (Leader)
+    - Neluka Fernando
+    - Maas Nadim
+    - Ravindu Herath
+    - Manditha Senadeera
+
+Project Details: GameQuit
+- An web based addiction assistance application
