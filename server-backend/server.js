@@ -1,8 +1,8 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const { default: userRouter } = require("./routes/userRouter.js");
+import express from "express";
+import mongoose from "mongoose";
+const { default: userRouter } = import("./routes/userRouter.js");
 
-dotenv.config();
+//dotenv.config();
 const uri = "mongodb+srv://test:123@sdgp.nzchh7c.mongodb.net/?retryWrites=true&w=majority";
 const port = process.env.PORT || 5000;
 
