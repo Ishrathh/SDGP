@@ -16,7 +16,7 @@ function LoginPage() {
             <label>Password</label>
           </div>
           <div className="line"></div>
-          <a href="#">Don't have an account? Sign up</a>
+          <a href="/signup">Don't have an account? Sign up</a>
           <br />
           <input type="submit" value="Sign In" class="login-btn" /><br />
         </form>
