@@ -1,7 +1,6 @@
 {
   "name": "server-backend",
   "version": "1.0.0",
-  "type": "module",
   "description": "Node backend server for this project",
   "main": "server.js",
   "scripts": {

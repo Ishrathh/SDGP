@@ -1,6 +1,6 @@
-import express from "express";
-import mongoose from "mongoose";
-const { default: userRouter } = import("./routes/userRouter.js");
+const express = require('express');
+const mongoose = require('mongoose');
+const { default: userRouter } = require("./routes/userRouter.js");
 
 //dotenv.config();
 const uri = "mongodb+srv://test:123@sdgp.nzchh7c.mongodb.net/?retryWrites=true&w=majority";
