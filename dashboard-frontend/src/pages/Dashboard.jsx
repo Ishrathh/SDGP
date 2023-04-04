@@ -1,11 +1,11 @@
 import React from 'react'
-import NavBar from './NavBar'
-import ScreenTime from './ScreenTime'
+import NavBar from '../components/NavBar'
+import ScreenTime from '../components/ScreenTime'
 import '../css/Dashboard.css'
-import Quota from './Quota'
+import Quota from '../components/Quota'
 import '../css/common.css'
-import Timer from './Timer'
-import Suggestions from './Suggestions'
+import Timer from '../components/Timer'
+import Suggestions from '../components/Suggestions'
 
 const Dashboard = () => {
   return (
