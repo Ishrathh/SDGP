@@ -1,6 +1,19 @@
 import React from 'react';
 import '../css/LoginPage.css';
 
+const handleSubmit = (e)=> {
+  e.preventDefault();
+  const email= emailRef.currunt.value
+  const password = passwordRef.currunt.value
+  //send login request if its not registerd and send
+  const name = nameRef.currunt.value
+  const confirmPassword = confirmPassword.currunt.value
+  if (password !== confirmPassword)return dispatch({type:'UPDATE_ALERT', payload: {open:true, severity:'error', message:'Password do not match',
+},
+});
+//send register request
+}
+
 function LoginPage() {
   return (
     <div className="container">
