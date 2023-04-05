@@ -3,9 +3,11 @@ import '../css/AddictionForm.css';
 import '../css/common.css'
 import NavBar from '../components/NavBar';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function AddictionForm() {
   const [ formData, setFormData ] = useState({});
+  const navigate = useNavigate();
 
   const handleInputChange = (id, value) => {
     setFormData({
@@ -16,24 +18,26 @@ function AddictionForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
     console.log(formData);
     handleAddiction();
-    // Navigate('/');
   };
+
+  const handleGoBack = () => {
+    navigate('/dashboard');
+  }
 
   const handleAddiction = async () => {
     const formDetails = formData;
-    console.log("handleAddiction function has been run");
 
     //Saving new user to the database
-    await axios.post("http://localhost:8000/user/addiction", formDetails) 
+    await axios.post("http://localhost:8000/addiction", formDetails) 
         .then((response) => {
-            console.log(response)
+            console.log(response.data)
+            alert("Addiction Level: " + response.data)
         })
         .catch((error) => {
             console.log(error)
-            alert('Error occured when registering user');
+            alert('Error occured');
         })
   }
 
@@ -416,75 +420,14 @@ function AddictionForm() {
     </div>
   </div>
 
-  <div className="form-question">
-    <label htmlFor="addictionLevel">Which level of addiction would you assess yourself as?</label>
-    <div className="radio-buttons">
-    <label>
-      <input
-            type="radio"
-            id="addictionLevel"
-            name="addictionLevel"
-            value="notAddicted"
-            required
-            onChange={(e) => handleInputChange(e.target.id, e.target.value)}
-          />
-          Not Addicted
-        </label>
-        <label>
-      <input
-            type="radio"
-            id="addictionLevel"
-            name="addictionLevel"
-            value="mildlyAddicted"
-            required
-            onChange={(e) => handleInputChange(e.target.id, e.target.value)}
-          />
-          Mildly Addicted
-        </label>
-        <label>
-      <input
-            type="radio"
-            id="addictionLevel"
-            name="addictionLevel"
-            value="addicted"
-            required
-            onChange={(e) => handleInputChange(e.target.id, e.target.value)}
-          />
-          Addicted
-        </label>
-        <label>
-      <input
-            type="radio"
-            id="addictionLevel"
-            name="addictionLevel"
-            value="moderatelyAddicted"
-            required
-            onChange={(e) => handleInputChange(e.target.id, e.target.value)}
-          />
-          Moderately Addicted
-        </label>
-        <label>
-        <input
-            type="radio"
-            id="addictionLevel"
-            name="addictionLevel"
-            value="severelyAddicted"
-            required
-            onChange={(e) => handleInputChange(e.target.id, e.target.value)}
-          />
-          Severely Addicted
-        </label>
-    </div>
-  </div>
-
-<div className="form-question">
+<div className="btnPane">
   <button type="submit" className="btn btn-primary darkBtn">
     Submit
   </button>
+  <button onClick={() => handleGoBack()} className="lightBtn">Go back to Dashboard</button>
 </div>
 </form>
 </div>
-{/* <button onClick={() => handleAddiction()}>Just a button</button> */}
 </>
   );
 };
