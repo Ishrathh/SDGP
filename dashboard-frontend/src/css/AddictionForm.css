@@ -69,3 +69,11 @@
   font-size: 12px;
   margin-top: 5px;
 }
+
+.btnPane {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  gap: 10px;
+}
