@@ -1,39 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/LoginPage.css';
-import { register } from '../../../server-backend/controllers/user';
-import { login } from '../actions/user';
+import axios from 'axios';
+//import { login } from '../actions/user';
 
-const handleSubmit = (e)=> {
-  e.preventDefault();
-  const email= emailRef.currunt.value
-  const password = passwordRef.currunt.value
-  if(!register) return login({ email, password }, dispatch);
-  const name = nameRef.currunt.value
-  const confirmPassword = confirmPassword.currunt.value
-  if (password !== confirmPassword) 
-    return dispatch({
-      type:'UPDATE_ALERT', 
-      payload: {
-        open:true, 
-        severity:'error', 
-        message:'Passwords do not match',
-      },
-    });
-  register({name, email, password}, dispatch);
-}
 
 function LoginPage() {
+
+  const loginUser = async () => {
+    const credentials = formData;
+
+    //Saving user to the database
+    await axios.post("http://localhost:8000/user/login", credentials)
+      .then((response) => {
+           
+        //Saving user data to local storage
+        //localStorage.setItem("userName", response.data.userName);
+        //localStorage.setItem("userLevel", response.data.userLevel);
+      })
+      .catch((error) => {
+        //alert(error.response.data.message);
+        console.log(error);
+      });
+  }
+
+  const handleSubmit = (e)=> {
+    e.preventDefault();
+    loginUser();
+    //return login( formData);
+  }
+
+  const [formData, setFormData] = useState({ });
+  const handleChange = (id, value) => {
+    setFormData({
+      ...formData, 
+      [id]: value
+    })
+  }
+  
   return (
     <div className="container">
       <div className="login-box">
         <h2>Login</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="user-box">
-            <input type="text" name="username" required />
-            <label>Username or Email</label>
+            <input type="text" name="email" id="email" onChange={(e) => handleChange(e.target.id, e.target.value)} required />
+            <label>Email</label>
           </div>
           <div className="user-box">
-            <input type="password" name="password" required />
+            <input type="password" name="password" id="password" onChange={(e) => handleChange(e.target.id, e.target.value)} required />
             <label>Password</label>
           </div>
           <div className="line"></div>

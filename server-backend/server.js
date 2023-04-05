@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const { default: userRouter } = require("./routes/userRouter.js");
+const userRouter = require("./routes/userRouter.js");
 
 //dotenv.config();
 const uri = "mongodb+srv://test:123@sdgp.nzchh7c.mongodb.net/?retryWrites=true&w=majority";
@@ -31,7 +31,7 @@ async function connectDB() {
 }
 
 app.use(express.json({ limit: '10mb'}))
-app.use('/register', userRouter)
+app.use('/user', userRouter)
 app.use('/', (req, res) => res.json({message:'You have accessed the API'}));
 app.use((req, res) =>
   res.status(404).json({success:false, message:'Not found!'})

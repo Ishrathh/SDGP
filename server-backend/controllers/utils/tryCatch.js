@@ -12,5 +12,5 @@ const tryCatch = (controller)=>{
     }
 }
 
-
-export default tryCatch;
+module.exports = tryCatch;
+//export default tryCatch;

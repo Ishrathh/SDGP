@@ -1,10 +1,14 @@
-import bcrypt from 'bcryptjs'
-import User from '../models/User.js'
-import jwt from 'jsonwebtoken'
-import tryCatch from './utils/tryCatch.js'
+//import bcrypt from 'bcryptjs'
+//import User from '../models/User.js'
+//import jwt from 'jsonwebtoken'
+//import tryCatch from './utils/tryCatch.js'
+const bcrypt = require('bcryptjs');
+const User = require('../models/User.js')
+const jwt = require('jsonwebtoken');
+const tryCatch = require('./utils/tryCatch.js')
 
 
-export const register = tryCatch( async(req, res)=>{
+const register = tryCatch( async(req, res)=>{
 
         const { name, email, password} = req.body;
         if (password.length < 6)
@@ -39,7 +43,8 @@ export const register = tryCatch( async(req, res)=>{
         });
 });
 
-export const login = tryCatch(async(req, res)=>{
+const login = tryCatch(async(req, res)=>{
+        console.log(req.body);
         const { email, password} = req.body;
         
         const emailLowerCase = email.toLowerCase;
@@ -64,3 +69,5 @@ export const login = tryCatch(async(req, res)=>{
                 result: { id, name, email: emailLowerCase, photoURL, token},
         }); 
 })
+
+module.exports = {register, login,};
