@@ -1,25 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const userRouter = require("./routes/userRouter.js");
+const cors = require("cors");
+const dotenv = require("dotenv");
 
-//dotenv.config();
-const uri = "mongodb+srv://test:123@sdgp.nzchh7c.mongodb.net/?retryWrites=true&w=majority";
-const port = process.env.PORT || 5000;
+dotenv.config();
+
+const uri = process.env.MONGO_URI;
+const port = process.env.PORT || 8000;
 
 const app = express();
 
-app.use((req, res) =>{
-  res.setHeader('Access-Control-Allow-Origin', process.env.CLIENT_URL);
-  res.setHeader(
-    'Access-Control-Allow-Methods',
-    'GET, POST, PUT, PATCH, DELETE'
-  );
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-Requested-With, Content-Type, Authorization'
-  );
-  next();
-})
+app.use(cors());
 
 async function connectDB() {
   try {
@@ -32,13 +24,9 @@ async function connectDB() {
 
 app.use(express.json({ limit: '10mb'}))
 app.use('/user', userRouter)
-app.use('/', (req, res) => res.json({message:'You have accessed the API'}));
-app.use((req, res) =>
-  res.status(404).json({success:false, message:'Not found!'})
-); 
 
 connectDB();
 
-app.listen(8000, () => {
-  console.log("Server started on port 8000");
+app.listen(port, () => {
+  console.log("Server started on port " + port);
 });
