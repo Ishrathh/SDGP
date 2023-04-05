@@ -3,8 +3,8 @@ import Hours from './Hours'
 import '../css/Quota.css'
 
 const Quota = () => {
-  const [dailyQuota, setDailyQuota] = useState(2);
-  const [weeklyQuota, setWeeklyQuota] = useState(14);
+  const [dailyQuota, setDailyQuota] = useState(0);
+  const [weeklyQuota, setWeeklyQuota] = useState(0);
   const [showQuotaInput, setShowQuotaInput] = useState(false);
 
   const handleSetQuotaClick = () => {
