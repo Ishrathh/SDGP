@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import '../css/AddictionForm.css';
 import '../css/common.css'
 import NavBar from '../components/NavBar';
+import axios from 'axios';
 
 function AddictionForm() {
   const [ formData, setFormData ] = useState({});
@@ -17,7 +18,24 @@ function AddictionForm() {
     e.preventDefault();
     console.log("Form submitted");
     console.log(formData);
+    handleAddiction();
+    // Navigate('/');
   };
+
+  const handleAddiction = async () => {
+    const formDetails = formData;
+    console.log("handleAddiction function has been run");
+
+    //Saving new user to the database
+    await axios.post("http://localhost:8000/user/addiction", formDetails) 
+        .then((response) => {
+            console.log(response)
+        })
+        .catch((error) => {
+            console.log(error)
+            alert('Error occured when registering user');
+        })
+  }
 
   return (
     <>
@@ -35,7 +53,7 @@ function AddictionForm() {
                 type="radio"
                 id="missedSchoolOrWork"
                 name="missedSchoolOrWork"
-                value="yes"
+                value="1"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -46,7 +64,7 @@ function AddictionForm() {
               type="radio"
               id="missedSchoolOrWork"
               name="missedSchoolOrWork"
-              value="no"
+              value="0"
               required
               onChange={(e) => handleInputChange(e.target.id, e.target.value)}
             />
@@ -65,7 +83,7 @@ function AddictionForm() {
                 type="radio"
                 id="liedAboutTime"
                 name="liedAboutTime"
-                value="yes"
+                value="1"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -76,7 +94,7 @@ function AddictionForm() {
               type="radio"
               id="liedAboutTime"
               name="liedAboutTime"
-              value="no"
+              value="0"
               required
               onChange={(e) => handleInputChange(e.target.id, e.target.value)}
             />
@@ -95,7 +113,7 @@ function AddictionForm() {
                 type="radio"
                 id="prioritizedHygiene"
                 name="prioritizedHygiene"
-                value="yes"
+                value="1"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -106,7 +124,7 @@ function AddictionForm() {
               type="radio"
               id="prioritizedHygiene"
               name="prioritizedHygiene"
-              value="no"
+              value="0"
               required
               onChange={(e) => handleInputChange(e.target.id, e.target.value)}
             />
@@ -125,7 +143,7 @@ function AddictionForm() {
                 type="radio"
                 id="physicalSymptoms"
                 name="physicalSymptoms"
-                value="yes"
+                value="1"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -136,7 +154,7 @@ function AddictionForm() {
               type="radio"
               id="physicalSymptoms"
               name="physicalSymptoms"
-              value="no"
+              value="0"
               required
               onChange={(e) => handleInputChange(e.target.id, e.target.value)}
             />
@@ -155,7 +173,7 @@ function AddictionForm() {
                 type="radio"
                 id="playFrequency"
                 name="playFrequency"
-                value="never"
+                value="0"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -167,7 +185,7 @@ function AddictionForm() {
               type="radio"
               id="playFrequency"
               name="playFrequency"
-              value="rarely"
+              value="1"
               required
               onChange={(e) => handleInputChange(e.target.id, e.target.value)}
             />
@@ -179,7 +197,7 @@ function AddictionForm() {
               type="radio"
               id="playFrequency"
               name="playFrequency"
-              value="occasionally"
+              value="2"
               required
               onChange={(e) => handleInputChange(e.target.id, e.target.value)}
             />
@@ -191,7 +209,7 @@ function AddictionForm() {
               type="radio"
               id="playFrequency"
               name="playFrequency"
-              value="frequently"
+              value="3"
               required
               onChange={(e) => handleInputChange(e.target.id, e.target.value)}
             />
@@ -203,7 +221,7 @@ function AddictionForm() {
               type="radio"
               id="playFrequency"
               name="playFrequency"
-              value="always"
+              value="4"
               required
               onChange={(e) => handleInputChange(e.target.id, e.target.value)}
             />
@@ -251,7 +269,7 @@ function AddictionForm() {
                 type="radio"
                 id="thinkingFrequency"
                 name="thinkingFrequency"
-                value="never"
+                value="0"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -262,7 +280,7 @@ function AddictionForm() {
                 type="radio"
                 id="thinkingFrequency"
                 name="thinkingFrequency"
-                value="rarely"
+                value="1"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -273,7 +291,7 @@ function AddictionForm() {
                 type="radio"
                 id="thinkingFrequency"
                 name="thinkingFrequency"
-                value="occasionally"
+                value="2"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -284,7 +302,7 @@ function AddictionForm() {
                 type="radio"
                 id="thinkingFrequency"
                 name="thinkingFrequency"
-                value="frequently"
+                value="3"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -295,7 +313,7 @@ function AddictionForm() {
                 type="radio"
                 id="thinkingFrequency"
                 name="thinkingFrequency"
-                value="always"
+                value="4"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -313,7 +331,7 @@ function AddictionForm() {
                 type="radio"
                 id="timeLossFrequency"
                 name="timeLossFrequency"
-                value="never"
+                value="0"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -324,7 +342,7 @@ function AddictionForm() {
                 type="radio"
                 id="timeLossFrequency"
                 name="timeLossFrequency"
-                value="rarely"
+                value="1"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -335,7 +353,7 @@ function AddictionForm() {
                 type="radio"
                 id="timeLossFrequency"
                 name="timeLossFrequency"
-                value="occasionally"
+                value="2"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -346,7 +364,7 @@ function AddictionForm() {
                 type="radio"
                 id="timeLossFrequency"
                 name="timeLossFrequency"
-                value="frequently"
+                value="3"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -357,7 +375,7 @@ function AddictionForm() {
                 type="radio"
                 id="timeLossFrequency"
                 name="timeLossFrequency"
-                value="always"
+                value="4"
                 required
                 onChange={(e) => handleInputChange(e.target.id, e.target.value)}
               />
@@ -378,7 +396,7 @@ function AddictionForm() {
             type="radio"
             id="negativeConsequences"
             name="negativeConsequences"
-            value="yes"
+            value="1"
             required
             onChange={(e) => handleInputChange(e.target.id, e.target.value)}
           />
@@ -389,7 +407,7 @@ function AddictionForm() {
           type="radio"
           id="negativeConsequences"
           name="negativeConsequences"
-          value="no"
+          value="0"
           required
           onChange={(e) => handleInputChange(e.target.id, e.target.value)}
         />
@@ -466,7 +484,7 @@ function AddictionForm() {
 </div>
 </form>
 </div>
-
+{/* <button onClick={() => handleAddiction()}>Just a button</button> */}
 </>
   );
 };
