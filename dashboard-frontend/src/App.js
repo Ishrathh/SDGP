@@ -13,7 +13,7 @@ function App() {
           <Route exact path="/" element={<LoginPage/>} />
           <Route path="/signup" element={<SignupPage/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/addictionForm" element={<AddictionForm/>} />
+          <Route path="/addictionform" element={<AddictionForm/>} />
         </Routes>
       </BrowserRouter>
     </>
