@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90af27c4-cd1b-4113-a62b-03a53df0a706" name="Changes" comment="" />
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="afd986ca-da63-4c85-a0b8-a0894ff881ee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +19,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NvD7SgJKfg46KuGKgWWH9VxbmQ" />
+  <component name="ProjectId" id="2Npnqdctx9Kt5ErHoIi0idCGDP2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -23,6 +29,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -35,6 +45,12 @@
       <option name="presentableId" value="Default" />
       <updated>1680535503854</updated>
       <workItem from="1680535506252" duration="15000" />
+      <changelist id="afd986ca-da63-4c85-a0b8-a0894ff881ee" name="Changes" comment="" />
+      <created>1680370082758</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680370082758</updated>
+      <workItem from="1680370084377" duration="396000" />
     </task>
     <servers />
   </component>
