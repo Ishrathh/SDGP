@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import '../css/SignupPage.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import LOGO from '../images/logodark.png';
   
 function SignupPage() {
 
@@ -45,9 +46,10 @@ function SignupPage() {
   }
 
   return (
-    <div className="container">
+    <div className="body">
       <div className="signup-box">
-        <h2>Sign up</h2>
+      <img src={LOGO} alt='logo' className='logoLarge' style={{ width: 200, height: 200 }}/>
+      <h1>Register</h1>
         <form onSubmit={handleSubmit}>
           <div className="user-box">
             <input type="text" name="name" required id='name' onChange={(e) => handleChange(e.target.id, e.target.value)}/>
@@ -65,7 +67,7 @@ function SignupPage() {
             <input type="password" name="confirm-password" id='repassword' required onChange={(e) => handleChange(e.target.id, e.target.value)}/>
             <label>Confirm Password</label>
           </div>
-          <input type="submit" value="Sign up" />
+          <input type="submit" value="Sign up" className='signupBtn darkBtn'/>
         </form>
       </div>
     </div>

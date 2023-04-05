@@ -1,9 +1,9 @@
-body {
+.body {
   background-color: #0C6170;
+  padding: 5% 10% 10% 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4%;
 }
 
 .logoLarge {
@@ -19,6 +19,14 @@ body {
   border-radius: 30px;
   display: flex;
   flex-direction: column;
+}
+
+.login-box h1 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 30px;
+  color: black;
 }
 
 .user-box {

@@ -43,9 +43,10 @@ function LoginPage() {
   }
   
   return (
-    <div>
+    <div className='body'>
       <div className="login-box">
         <img src={LOGO} alt='logo' className='logoLarge' style={{ width: 200, height: 200 }}/>
+        <h1>Login</h1>
         <form onSubmit={handleSubmit}>
           <div className="user-box">
             <input type="text" name="email" id="email" onChange={(e) => handleChange(e.target.id, e.target.value)} required />

@@ -1,26 +1,33 @@
 .container {
+  background-color: #0C6170;
+  padding: 5% 10% 10% 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: navy;
+}
+
+.logoLarge {
+  margin: 0 auto;
 }
 
 .signup-box {
   position: relative;
   width: 400px;
-  height: 500px;
-  padding: 40px;
+  height: 600px;
   background-color: white;
   border-radius: 10px;
+  padding: 0 40px 40px 40px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.signup-box h2 {
+.signup-box h1 {
   margin: 0;
   padding: 0 0 20px;
   text-align: center;
-  font-size: 22px;
-  color: white;
+  font-size: 30px;
+  color: black;
 }
 
 .user-box {
@@ -58,17 +65,7 @@
   font-size: 12px;
 }
 
-input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 40px;
-  background: #03a9f4;
-  color: white;
-  font-size: 18px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #1a73e8;
+.signupBtn{
+  margin-top: 30px;
+  width: 100%;
 }
