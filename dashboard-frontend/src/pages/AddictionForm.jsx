@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import '../css/AddictionForm.css';
+import '../css/common.css'
 import NavBar from '../components/NavBar';
 import axios from 'axios';
 
@@ -40,7 +41,7 @@ function AddictionForm() {
     <>
     <NavBar/>
     <div className="form-container">
-      <h2>Gaming Addiction Form</h2>
+      <h2 id="formHeading">Gaming Addiction Form</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-question">
           <label>
@@ -322,7 +323,6 @@ function AddictionForm() {
         </div>
     </div>
   
-
   <div className="form-question">
     <label>How often do you lose track of time while playing video games?</label>
     <div>
@@ -478,7 +478,7 @@ function AddictionForm() {
   </div>
 
 <div className="form-question">
-  <button type="submit" className="btn btn-primary">
+  <button type="submit" className="btn btn-primary darkBtn">
     Submit
   </button>
 </div>
