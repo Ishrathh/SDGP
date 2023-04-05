@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../css/LoginPage.css';
+import '../css/common.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import LOGO from '../images/logodark.png';
 
 function LoginPage() {
 
@@ -41,9 +43,9 @@ function LoginPage() {
   }
   
   return (
-    <div className="container">
+    <div>
       <div className="login-box">
-        <h2>Login</h2>
+        <img src={LOGO} alt='logo' className='logoLarge' style={{ width: 200, height: 200 }}/>
         <form onSubmit={handleSubmit}>
           <div className="user-box">
             <input type="text" name="email" id="email" onChange={(e) => handleChange(e.target.id, e.target.value)} required />
@@ -56,7 +58,7 @@ function LoginPage() {
           <div className="line"></div>
           <a href="/signup">Don't have an account? Sign up</a>
           <br />
-          <input type="submit" value="Sign In" className="login-btn" /><br />
+          <button type="submit" className='loginBtn darkBtn'>Login</button>
         </form>
       </div>
     </div>
