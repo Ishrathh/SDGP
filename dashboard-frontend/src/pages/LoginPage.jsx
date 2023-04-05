@@ -1,11 +1,13 @@
 import React from 'react';
 import '../css/LoginPage.css';
+import { register } from '../../../server-backend/controllers/user';
+import { login } from '../actions/user';
 
 const handleSubmit = (e)=> {
   e.preventDefault();
   const email= emailRef.currunt.value
   const password = passwordRef.currunt.value
-  //send login request if its not registerd and send
+  if(!register) return login({email,password},dispatch)
   const name = nameRef.currunt.value
   const confirmPassword = confirmPassword.currunt.value
   if (password !== confirmPassword)return dispatch({type:'UPDATE_ALERT', payload: {open:true, severity:'error', message:'Password do not match',

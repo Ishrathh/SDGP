@@ -2,8 +2,8 @@ import { error } from "console";
 
 const fetchData = async({url, methods='POST', token='', body=null}, dispatch)=>{
     const Headers = token
-    ? {'content-Type':'application', authorization:'Bearer ${token}'}
-    :{'content-Type': 'application'};
+    ? {'content-Type':'application/json', authorization:'Bearer ${token}'}
+    :{'content-Type': 'application/json'};
     body=body ? {body:JSON.stringify(body)} : {}
     try{
         const responce = await fetch(url, {methods,headers,...body})
