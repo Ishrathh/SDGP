@@ -12,7 +12,7 @@ const Suggestions = () => {
 
   const handleGetHobby = async () => {
     await axios
-      .post('http://localhost:8000/getHobby')
+      .post('http://127.0.0.1:5000/getRecommendations')
       .then((response) => {
         console.log(response.data);
         changeSuggestion(response.data);
@@ -25,7 +25,7 @@ const Suggestions = () => {
 
   const handleLike = async () => {
     await axios
-      .post('http://localhost:8000/like', suggestion.toString)
+      .post('http://127.0.0.1:5000/updateRating', { hobby: suggestion, liked: true })
       .then((response) => {
         console.log(response.data);
         
@@ -38,10 +38,9 @@ const Suggestions = () => {
 
   const handleDislike = async () => {
     await axios
-      .post('http://localhost:8000/dislike')
+      .post('http://127.0.0.1:5000/updateRating', { hobby: suggestion, liked: false })
       .then((response) => {
         console.log(response.data);
-        alert('Addiction Level: ' + response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -50,11 +49,16 @@ const Suggestions = () => {
   };
 
   const handleRecommendedHobby = async () => {
+    const hobbyTypes = ['Creative', 'Outdoor', 'Intellectual', 'Social', 'Physical'];
+    const randomHobbyType = hobbyTypes[Math.floor(Math.random() * hobbyTypes.length)];
+
+    console.log(randomHobbyType);
+
     await axios
-      .post('http://localhost:8000/recommendedHobby')
+      .post('http://127.0.0.1:5000/suggestHobby', { type: randomHobbyType })
       .then((response) => {
         console.log(response.data);
-        alert('Addiction Level: ' + response.data);
+        changeSuggestion(response.data);
       })
       .catch((error) => {
         console.log(error);
