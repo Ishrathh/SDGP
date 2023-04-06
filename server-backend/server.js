@@ -57,7 +57,7 @@ app.post('/addiction',  (req, res) => {
   oneDArray.push(...inputData);
   const twoDInput = [oneDArray];
 
-  const python = spawn('python', ['module_loader.py']);
+  const python = spawn('python', ['model_loader_addiction.py']);
 
   python.stdout.on('data', function (data) {
     console.log(data.toString());
@@ -75,6 +75,41 @@ app.post('/addiction',  (req, res) => {
     console.log(`child process close all stdio with code ${code}`);
   })   
 });
+
+app.post('/getHobby', (req, res) => {
+
+  const python = spawn('python', ['model_loader_recommendation.py', 'suggest_random_hobby']);
+
+  python.stdout.on('data', function (data) {
+    console.log(data.toString());
+    res.send(data.toString());
+  });
+
+  // python.stdin.write('suggest_random_hobby');
+  // python.stdin.end();
+
+  python.on('error', function (err) { 
+    console.log(err);
+  });
+
+  python.on('close', (code) => {
+    console.log(`child process close all stdio with code ${code}`);
+  })
+})
+
+app.post('/like', (req, res) => {
+  const { hobby } = req.body.suggestion;
+  console.log('liked');
+  console.log(hobby);
+})
+
+app.post('/dislike', (req, res) => {
+
+})
+
+app.post('/recommendedHobby', (req, res) => {
+
+})
 
 connectDB();
 
