@@ -18,8 +18,8 @@ const Dashboard = () => {
         <div className='rightPane'>
           <Suggestions/>
           <div className='screenTimePane'>
-            <ScreenTime title="Daily Screen Time" gamingHours="2" nonGamingHours="10"/>
-            <ScreenTime title="Weekly Screen Time" gamingHours="14" nonGamingHours="70"/>
+            <ScreenTime title="Daily Screen Time" gamingHours="0" nonGamingHours="0"/>
+            <ScreenTime title="Weekly Screen Time" gamingHours="0" nonGamingHours="0"/>
           </div>
 
           <Timer/>
